@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class HomResponse{
 
 	@SerializedName("Popular")
-	private List<Popular> popular;
+	private List<ProductPopular> popular;
 
 	@SerializedName("all_products")
 	private List<AllProducts> allProducts;
@@ -17,11 +17,11 @@ public class HomResponse{
 	@SerializedName("banners")
 	private List<Object> banners;
 
-	public void setPopular(List<Popular> popular){
+	public void setPopular(List<ProductPopular> popular){
 		this.popular = popular;
 	}
 
-	public List<Popular> getPopular(){
+	public List<ProductPopular> getPopular(){
 		return popular;
 	}
 

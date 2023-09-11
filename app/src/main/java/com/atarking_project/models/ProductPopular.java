@@ -3,7 +3,7 @@ package com.atarking_project.models;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class Popular {
+public class ProductPopular {
 
 	@SerializedName("regular_price")
 	private String regularPrice;

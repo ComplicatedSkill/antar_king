@@ -11,16 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atarking_project.R;
-import com.atarking_project.models.ProductPopular;
+import com.atarking_project.models.AllProducts;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class BestProductAdapter extends RecyclerView.Adapter<BestProductAdapter.BastProductViewHolder> {
-    private List<ProductPopular> productPopularList;
+public class AllProductAdapter extends RecyclerView.Adapter<AllProductAdapter.BastProductViewHolder> {
+    private List<AllProducts> allProductsList;
     private Context context;
 
-    public BestProductAdapter(List<ProductPopular> productPopularList, Context context) {
-        this.productPopularList = productPopularList;
+    public AllProductAdapter(List<AllProducts> allProductsList, Context context) {
+        this.allProductsList = allProductsList;
         this.context = context;
     }
 
@@ -33,21 +34,21 @@ public class BestProductAdapter extends RecyclerView.Adapter<BestProductAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull BastProductViewHolder holder, int position) {
-        ProductPopular productPopular = productPopularList.get(position);
-        try {
-            if (productPopular != null){
-                holder.productName.setText(productPopular.getName().toString()+ "...");
-                holder.productPrice.setText("$ "+productPopular.getPrice());
-//                Picasso.with(context).load(productPopular.getImages().toString()).into(holder.image);
+        AllProducts allProducts = allProductsList.get(position);
+        try{
+            if (allProducts != null){
+                holder.productName.setText(allProducts.getName().toString());
+                holder.productPrice.setText("$ "+allProducts.getPrice());
+                Picasso.with(context).load(allProducts.getImages().get(0).getSrc()).into(holder.image);
             }
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
 
+    }
     @Override
     public int getItemCount() {
-        return productPopularList.size();
+        return allProductsList.size();
     }
 
     public static class  BastProductViewHolder extends RecyclerView.ViewHolder {

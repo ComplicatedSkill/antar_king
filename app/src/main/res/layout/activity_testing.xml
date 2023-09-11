@@ -59,8 +59,6 @@
 
         </LinearLayout>
     </LinearLayout>
-
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -76,54 +74,11 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMaimHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Discover"
-                    android:textSize="24dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:layout_marginStart="5dp"
-                    android:textStyle="bold"
-                    android:textColor="#fff"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="Your Best Watches"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textStyle="bold"
-                    android:textColor="#fff"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewBestProduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Product For You"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textColor="#fff"
-                    android:textSize="20dp"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerAllProduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp"/>
-            </LinearLayout>
-
+                android:layout_marginTop="10dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
