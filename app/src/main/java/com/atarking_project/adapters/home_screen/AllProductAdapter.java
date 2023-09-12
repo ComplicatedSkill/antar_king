@@ -1,6 +1,7 @@
 package com.atarking_project.adapters.home_screen;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.atarking_project.R;
 import com.atarking_project.models.AllProducts;
+import com.atarking_project.screens.ScreenProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -41,6 +43,14 @@ public class AllProductAdapter extends RecyclerView.Adapter<AllProductAdapter.Ba
                 holder.productPrice.setText("$ "+allProducts.getPrice());
                 Picasso.with(context).load(allProducts.getImages().get(0).getSrc()).into(holder.image);
             }
+            holder.image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, ScreenProductDetailActivity.class);
+                    intent.putExtra("PRODUCT_ID", allProducts.getId());
+                    context.startActivity(intent);
+                }
+            });
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -3,11 +3,13 @@ package com.atarking_project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ import com.atarking_project.adapters.home_screen.BestProductAdapter;
 import com.atarking_project.api.APIClient;
 import com.atarking_project.api.APIInterface;
 import com.atarking_project.models.HomResponse;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private APIInterface apiInterface;
     private BestProductAdapter bestProductAdapter;
     private AllProductAdapter allProductAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private ShimmerFrameLayout shimmerFrameLayout;
+    private LinearLayout linearLayoutDataViewHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +46,22 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         allProductRecyclerView = findViewById(R.id.recyclerAllProduct);
         bestProductRecyclerView = findViewById(R.id.recyclerViewBestProduct);
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayoutHome);
+        shimmerFrameLayout = findViewById(R.id.homeScreenPlaceHolder);
+        linearLayoutDataViewHome = findViewById(R.id.dataViewHome);
+
         apiInterface = APIClient.getClient().create(APIInterface.class);
-        progressBar.setVisibility(View.VISIBLE);
+        linearLayoutDataViewHome.setVisibility(View.INVISIBLE);
+        shimmerFrameLayout.startShimmer();
         getData();
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+                getData();
+            }
+        });
 
     }
 
@@ -52,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
         apiInterface.getProductHomePage().enqueue(new Callback<HomResponse>() {
             @Override
             public void onResponse(Call<HomResponse> call, Response<HomResponse> response) {
-                progressBar.setVisibility(View.GONE);
+                linearLayoutDataViewHome.setVisibility(View.VISIBLE);
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.INVISIBLE);
                 if (response.isSuccessful()){
                     if (response.body() != null){
 
@@ -86,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<HomResponse> call, Throwable t) {
-                progressBar.setVisibility(View.GONE);
+                linearLayoutDataViewHome.setVisibility(View.VISIBLE);
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.INVISIBLE);
             }
         });
     }

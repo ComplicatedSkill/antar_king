@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.Natarking_project" parent="Base.Theme.Natarking_project" />
+    <style name="fab_3_rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="android:solidColor">#fff</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnContainer">@color/white</item>
+    </style>
 </resources>
