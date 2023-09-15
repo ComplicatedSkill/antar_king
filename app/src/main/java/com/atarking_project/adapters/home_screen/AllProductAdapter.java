@@ -2,6 +2,8 @@ package com.atarking_project.adapters.home_screen;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.atarking_project.R;
 import com.atarking_project.models.AllProducts;
 import com.atarking_project.screens.ScreenProductDetailActivity;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
+import java.net.URL;
 import java.util.List;
 
 public class AllProductAdapter extends RecyclerView.Adapter<AllProductAdapter.BastProductViewHolder> {
@@ -39,9 +42,9 @@ public class AllProductAdapter extends RecyclerView.Adapter<AllProductAdapter.Ba
         AllProducts allProducts = allProductsList.get(position);
         try{
             if (allProducts != null){
-                holder.productName.setText(allProducts.getName().toString());
+                holder.productName.setText(allProducts.getName());
                 holder.productPrice.setText("$ "+allProducts.getPrice());
-                Picasso.with(context).load(allProducts.getImages().get(0).getSrc()).into(holder.image);
+                Glide.with(context).load(allProducts.getImages().get(0).getSrc()).into(holder.image);
             }
             holder.image.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         Window window = this.getWindow();
         window.setStatusBarColor(Color.BLACK);
-        progressBar = findViewById(R.id.progressBar);
         allProductRecyclerView = findViewById(R.id.recyclerAllProduct);
         bestProductRecyclerView = findViewById(R.id.recyclerViewBestProduct);
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayoutHome);
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
                         };
                         allProductRecyclerView.setHasFixedSize(true);
-//                        allProductRecyclerView.setHasFixedSize(true);
                         allProductRecyclerView.setLayoutManager(gridLayoutManagerAllProduct);
                         allProductRecyclerView.setAdapter(allProductAdapter);
 

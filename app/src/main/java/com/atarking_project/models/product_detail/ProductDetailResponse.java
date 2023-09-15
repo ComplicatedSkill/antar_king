@@ -15,7 +15,7 @@ public class ProductDetailResponse{
 	private List<ProductVariationsItem> productVariations;
 
 	@SerializedName("related_products")
-	private List<RelatedProductsItem> relatedProducts;
+	private List<RelatedProducts> relatedProducts;
 
 	public void setProductDetail(ProductDetail productDetail){
 		this.productDetail = productDetail;
@@ -41,11 +41,11 @@ public class ProductDetailResponse{
 		return productVariations;
 	}
 
-	public void setRelatedProducts(List<RelatedProductsItem> relatedProducts){
+	public void setRelatedProducts(List<RelatedProducts> relatedProducts){
 		this.relatedProducts = relatedProducts;
 	}
 
-	public List<RelatedProductsItem> getRelatedProducts(){
+	public List<RelatedProducts> getRelatedProducts(){
 		return relatedProducts;
 	}
 

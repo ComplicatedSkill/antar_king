@@ -8,220 +8,270 @@
     android:background="#000"
     tools:context=".screens.ScreenProductDetailActivity">
     <LinearLayout
+        android:id="@+id/loadingScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/loading_screen"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/dataViewScreenDetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:paddingEnd="10dp"
-            android:layout_gravity="start"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:onClick="backProductDetailActivity"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/back_arrow_foreground"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_height="60dp"
+                android:paddingEnd="10dp"
+                android:layout_gravity="start"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_weight="1"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:onClick="backProductDetailActivity"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/back_arrow_foreground"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end">
-                    <ImageView
-
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/search"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="23dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/heart"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/cart"/>
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
                     <LinearLayout
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_gravity="end">
+                        <ImageView
+
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/heart"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cart"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/productName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:textSize="20dp"
+                                    android:textAlignment="center"
+                                    android:text="ANTAR Carbon case – Black Strap"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/cardViewProductImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="15dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="fill_parent"
+                                    android:orientation="vertical">
+                                    <com.denzcoskun.imageslider.ImageSlider
+                                        android:id="@+id/productImageSlide"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        app:iss_period="1000"
+                                        app:iss_delay="1000"
+                                        app:iss_placeholder="@drawable/loading_logo"
+                                        app:iss_text_align="CENTER"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_weight="2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="14dp"
+                                            android:textColor="#fff"
+                                            android:text="Price"/>
+                                        <TextView
+                                            android:id="@+id/productPrice"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="24dp"
+                                            android:textColor="#fff"
+                                            android:text="$ 200"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="14dp"
+                                            android:textColor="#fff"
+                                            android:text="Strap Color"/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="24dp"
+                                            android:textColor="#fff"
+                                            android:text="White"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="14dp"
+                                            android:textColor="#fff"
+                                            android:text="Material"/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_regular"
+                                            android:textSize="24dp"
+                                            android:textColor="#fff"
+                                            android:text="Carbon"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:padding="20dp"
+                            android:background="@drawable/card_show_description"
+                            android:orientation="vertical">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="#fff"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:textSize="20dp"
-                                android:textAlignment="center"
-                                android:text="ANTAR Carbon case – Black Strap"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:id="@+id/cardViewProductImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="15dp"
-                            android:orientation="horizontal">
+                                android:textSize="18dp"
+                                android:text="Description"/>
 
-                            <LinearLayout
-                                android:layout_weight="1"
+                            <org.sufficientlysecure.htmltextview.HtmlTextView
+                                android:id="@+id/productTitleDescription"
                                 android:layout_width="match_parent"
-                                android:layout_height="fill_parent"
-                                android:orientation="vertical">
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/yellow"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:text="Product Description"
+                                android:justificationMode="inter_word"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:textColor="#fff" />
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="14dp"
-                                        android:textColor="#fff"
-                                        android:text="Price"/>
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="24dp"
-                                        android:textColor="#fff"
-                                        android:text="$ 200"/>
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="14dp"
-                                        android:textColor="#fff"
-                                        android:text="Strap Color"/>
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="24dp"
-                                        android:textColor="#fff"
-                                        android:text="White"/>
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:orientation="vertical">
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="14dp"
-                                        android:textColor="#fff"
-                                        android:text="Material"/>
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_regular"
-                                        android:textSize="24dp"
-                                        android:textColor="#fff"
-                                        android:text="Carbon"/>
-                                </LinearLayout>
-
-                            </LinearLayout>
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:textColor="#fff"
+                                android:textSize="18dp"
+                                android:text="Related products"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewRelatedProduct"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"/>
                         </LinearLayout>
-                    </LinearLayout>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:padding="20dp"
-                        android:background="@drawable/card_show_description"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#fff"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textSize="18dp"
-                            android:text="Description"/>
-                        <TextView
-                            android:id="@+id/productTitleDescription"
-                            android:layout_marginTop="20dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#fff"
-                            android:text="Product Title"
-                            android:justificationMode="inter_word"
-                            android:fontFamily="@font/montserrat_regular"
-                            android:textSize="16dp"/>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="30dp"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:padding="5dp"
-                            android:background="@drawable/floating_action_button_bg"
-                            android:src="@mipmap/heart_wishlite_foreground"/>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="10dp"
+                                android:background="@drawable/floating_action_button_bg"
+                                android:src="@drawable/heart_24"/>
+                        </RelativeLayout>
                     </RelativeLayout>
-                </RelativeLayout>
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
 
-    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="5dp"
+            android:background="#111518"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:backgroundTint="#fff"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:text="ADD TO CART"/>
+        </RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

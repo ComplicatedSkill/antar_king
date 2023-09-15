@@ -1,9 +1,11 @@
 package com.atarking_project.models.product_detail;
 
 import java.util.List;
+
+import com.atarking_project.models.Images;
 import com.google.gson.annotations.SerializedName;
 
-public class RelatedProductsItem{
+public class RelatedProducts {
 
 	@SerializedName("manage_stock")
 	private boolean manageStock;
@@ -12,7 +14,7 @@ public class RelatedProductsItem{
 	private String shortDescription;
 
 	@SerializedName("images")
-	private List<ImagesItem> images;
+	private List<Images> images;
 
 	@SerializedName("stock_status")
 	private String stockStatus;
@@ -66,11 +68,11 @@ public class RelatedProductsItem{
 		return shortDescription;
 	}
 
-	public void setImages(List<ImagesItem> images){
+	public void setImages(List<Images> images){
 		this.images = images;
 	}
 
-	public List<ImagesItem> getImages(){
+	public List<Images> getImages(){
 		return images;
 	}
 
