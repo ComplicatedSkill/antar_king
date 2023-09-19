@@ -1,7 +1,7 @@
 package com.atarking_project.api;
 
-import com.atarking_project.models.HomResponse;
-import com.atarking_project.models.product_detail.ProductDetailResponse;
+import com.atarking_project.models.home_response.HomResponse;
+import com.atarking_project.models.product.ProductDetailResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

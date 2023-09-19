@@ -2,8 +2,6 @@ package com.atarking_project.adapters.home_screen;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atarking_project.R;
-import com.atarking_project.models.AllProducts;
+import com.atarking_project.models.home_response.AllProducts;
 import com.atarking_project.screens.ScreenProductDetailActivity;
 import com.bumptech.glide.Glide;
 
-import java.net.URL;
 import java.util.List;
 
 public class AllProductAdapter extends RecyclerView.Adapter<AllProductAdapter.BastProductViewHolder> {

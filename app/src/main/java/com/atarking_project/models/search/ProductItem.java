@@ -1,11 +1,13 @@
-package com.atarking_project.models.product_detail;
+package com.atarking_project.models.search;
 
 import java.util.List;
+import java.util.jar.Attributes;
 
+import com.atarking_project.models.Categories;
 import com.atarking_project.models.Images;
 import com.google.gson.annotations.SerializedName;
 
-public class RelatedProducts {
+public class ProductItem{
 
 	@SerializedName("manage_stock")
 	private boolean manageStock;
@@ -41,16 +43,19 @@ public class RelatedProducts {
 	private String name;
 
 	@SerializedName("attributes")
-	private List<ProductAttributes> attributes;
+	private List<Attributes> attributes;
 
 	@SerializedName("id")
 	private int id;
 
 	@SerializedName("categories")
-	private List<ProductCategories> categories;
+	private List<Categories> categories;
 
 	@SerializedName("sku")
 	private String sku;
+
+	@SerializedName("on_sale")
+	private boolean onSale;
 
 	public void setManageStock(boolean manageStock){
 		this.manageStock = manageStock;
@@ -140,11 +145,11 @@ public class RelatedProducts {
 		return name;
 	}
 
-	public void setAttributes(List<ProductAttributes> attributes){
+	public void setAttributes(List<Attributes> attributes){
 		this.attributes = attributes;
 	}
 
-	public List<ProductAttributes> getAttributes(){
+	public List<Attributes> getAttributes(){
 		return attributes;
 	}
 
@@ -156,11 +161,11 @@ public class RelatedProducts {
 		return id;
 	}
 
-	public void setCategories(List<ProductCategories> categories){
+	public void setCategories(List<Categories> categories){
 		this.categories = categories;
 	}
 
-	public List<ProductCategories> getCategories(){
+	public List<Categories> getCategories(){
 		return categories;
 	}
 
@@ -172,10 +177,18 @@ public class RelatedProducts {
 		return sku;
 	}
 
+	public void setOnSale(boolean onSale){
+		this.onSale = onSale;
+	}
+
+	public boolean isOnSale(){
+		return onSale;
+	}
+
 	@Override
  	public String toString(){
 		return 
-			"RelatedProductsItem{" + 
+			"ProductItem{" + 
 			"manage_stock = '" + manageStock + '\'' + 
 			",short_description = '" + shortDescription + '\'' + 
 			",images = '" + images + '\'' + 
@@ -191,6 +204,7 @@ public class RelatedProducts {
 			",id = '" + id + '\'' + 
 			",categories = '" + categories + '\'' + 
 			",sku = '" + sku + '\'' + 
+			",on_sale = '" + onSale + '\'' + 
 			"}";
 		}
 }

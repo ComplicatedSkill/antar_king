@@ -1,8 +1,8 @@
-package com.atarking_project.models.product_detail;
+package com.atarking_project.models.product;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CollectionItem{
+public class CollectionProduct {
 
 	@SerializedName("href")
 	private String href;

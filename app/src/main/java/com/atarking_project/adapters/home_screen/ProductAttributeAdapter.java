@@ -10,8 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atarking_project.R;
-import com.atarking_project.models.product_detail.ProductAttributes;
-import com.atarking_project.models.product_detail.ProductVariations;
+import com.atarking_project.models.ProductAttributes;
 
 import java.util.List;
 

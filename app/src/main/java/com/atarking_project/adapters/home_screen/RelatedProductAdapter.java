@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atarking_project.R;
-import com.atarking_project.models.product_detail.RelatedProducts;
+import com.atarking_project.models.product.RelatedProducts;
 import com.atarking_project.screens.ScreenProductDetailActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;

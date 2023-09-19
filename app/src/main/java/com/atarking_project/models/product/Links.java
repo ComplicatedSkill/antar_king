@@ -1,4 +1,4 @@
-package com.atarking_project.models.product_detail;
+package com.atarking_project.models.product;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
@@ -9,7 +9,7 @@ public class Links{
 	private List<SelfItem> self;
 
 	@SerializedName("collection")
-	private List<CollectionItem> collection;
+	private List<CollectionProduct> collection;
 
 	public void setSelf(List<SelfItem> self){
 		this.self = self;
@@ -19,11 +19,11 @@ public class Links{
 		return self;
 	}
 
-	public void setCollection(List<CollectionItem> collection){
+	public void setCollection(List<CollectionProduct> collection){
 		this.collection = collection;
 	}
 
-	public List<CollectionItem> getCollection(){
+	public List<CollectionProduct> getCollection(){
 		return collection;
 	}
 

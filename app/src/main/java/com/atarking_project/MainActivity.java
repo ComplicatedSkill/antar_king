@@ -17,7 +17,7 @@ import com.atarking_project.adapters.home_screen.AllProductAdapter;
 import com.atarking_project.adapters.home_screen.BestProductAdapter;
 import com.atarking_project.api.APIClient;
 import com.atarking_project.api.APIInterface;
-import com.atarking_project.models.HomResponse;
+import com.atarking_project.models.home_response.HomResponse;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import retrofit2.Call;

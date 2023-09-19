@@ -1,8 +1,9 @@
-package com.atarking_project.models.product_detail;
+package com.atarking_project.models.product;
 
 import java.util.List;
 
 import com.atarking_project.models.Images;
+import com.atarking_project.models.ProductAttributes;
 import com.google.gson.annotations.SerializedName;
 
 public class ProductVariations {

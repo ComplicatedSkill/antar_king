@@ -1,6 +1,9 @@
-package com.atarking_project.models;
+package com.atarking_project.models.home_response;
 
 import java.util.List;
+
+import com.atarking_project.models.Categories;
+import com.atarking_project.models.Images;
 import com.google.gson.annotations.SerializedName;
 
 public class AllProducts {

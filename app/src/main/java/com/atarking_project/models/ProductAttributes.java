@@ -1,4 +1,4 @@
-package com.atarking_project.models.product_detail;
+package com.atarking_project.models;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
