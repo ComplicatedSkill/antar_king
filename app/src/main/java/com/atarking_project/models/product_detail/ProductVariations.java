@@ -5,7 +5,7 @@ import java.util.List;
 import com.atarking_project.models.Images;
 import com.google.gson.annotations.SerializedName;
 
-public class ProductVariationsItem{
+public class ProductVariations {
 
 	@SerializedName("regular_price")
 	private String regularPrice;
@@ -23,7 +23,7 @@ public class ProductVariationsItem{
 	private String price;
 
 	@SerializedName("attributes")
-	private List<AttributesItem> attributes;
+	private List<ProductAttributes> attributes;
 
 	@SerializedName("id")
 	private int id;
@@ -77,11 +77,11 @@ public class ProductVariationsItem{
 		return price;
 	}
 
-	public void setAttributes(List<AttributesItem> attributes){
+	public void setAttributes(List<ProductAttributes> attributes){
 		this.attributes = attributes;
 	}
 
-	public List<AttributesItem> getAttributes(){
+	public List<ProductAttributes> getAttributes(){
 		return attributes;
 	}
 

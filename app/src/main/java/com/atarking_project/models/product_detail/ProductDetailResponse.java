@@ -9,10 +9,10 @@ public class ProductDetailResponse{
 	private ProductDetail productDetail;
 
 	@SerializedName("price_range")
-	private Object priceRange;
+	private PriceRange priceRange;
 
 	@SerializedName("product_variations")
-	private List<ProductVariationsItem> productVariations;
+	private List<ProductVariations> productVariations;
 
 	@SerializedName("related_products")
 	private List<RelatedProducts> relatedProducts;
@@ -25,19 +25,19 @@ public class ProductDetailResponse{
 		return productDetail;
 	}
 
-	public void setPriceRange(Object priceRange){
+	public void setPriceRange(PriceRange priceRange){
 		this.priceRange = priceRange;
 	}
 
-	public Object getPriceRange(){
+	public PriceRange getPriceRange(){
 		return priceRange;
 	}
 
-	public void setProductVariations(List<ProductVariationsItem> productVariations){
+	public void setProductVariations(List<ProductVariations> productVariations){
 		this.productVariations = productVariations;
 	}
 
-	public List<ProductVariationsItem> getProductVariations(){
+	public List<ProductVariations> getProductVariations(){
 		return productVariations;
 	}
 

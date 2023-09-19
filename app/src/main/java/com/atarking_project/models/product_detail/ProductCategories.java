@@ -2,7 +2,7 @@ package com.atarking_project.models.product_detail;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CategoriesItem{
+public class ProductCategories {
 
 	@SerializedName("name")
 	private String name;

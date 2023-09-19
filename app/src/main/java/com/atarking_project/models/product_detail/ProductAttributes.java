@@ -3,7 +3,7 @@ package com.atarking_project.models.product_detail;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class AttributesItem{
+public class ProductAttributes {
 
 	@SerializedName("visible")
 	private boolean visible;

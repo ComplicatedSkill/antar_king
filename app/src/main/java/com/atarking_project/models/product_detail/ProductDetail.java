@@ -50,19 +50,22 @@ public class ProductDetail{
 	private List<Integer> relatedIds;
 
 	@SerializedName("attributes")
-	private List<AttributesItem> attributes;
+	private List<ProductAttributes> attributes;
 
 	@SerializedName("id")
 	private int id;
 
 	@SerializedName("categories")
-	private List<CategoriesItem> categories;
+	private List<ProductCategories> categories;
 
 	@SerializedName("sku")
 	private String sku;
 
 	@SerializedName("permalink")
 	private String permalink;
+
+	@SerializedName("slug")
+	private String slug;
 
 	@SerializedName("on_sale")
 	private boolean onSale;
@@ -179,11 +182,11 @@ public class ProductDetail{
 		return relatedIds;
 	}
 
-	public void setAttributes(List<AttributesItem> attributes){
+	public void setAttributes(List<ProductAttributes> attributes){
 		this.attributes = attributes;
 	}
 
-	public List<AttributesItem> getAttributes(){
+	public List<ProductAttributes> getAttributes(){
 		return attributes;
 	}
 
@@ -195,11 +198,11 @@ public class ProductDetail{
 		return id;
 	}
 
-	public void setCategories(List<CategoriesItem> categories){
+	public void setCategories(List<ProductCategories> categories){
 		this.categories = categories;
 	}
 
-	public List<CategoriesItem> getCategories(){
+	public List<ProductCategories> getCategories(){
 		return categories;
 	}
 
@@ -217,6 +220,14 @@ public class ProductDetail{
 
 	public String getPermalink(){
 		return permalink;
+	}
+
+	public void setSlug(String slug){
+		this.slug = slug;
+	}
+
+	public String getSlug(){
+		return slug;
 	}
 
 	public void setOnSale(boolean onSale){
@@ -250,6 +261,7 @@ public class ProductDetail{
 			",categories = '" + categories + '\'' + 
 			",sku = '" + sku + '\'' + 
 			",permalink = '" + permalink + '\'' + 
+			",slug = '" + slug + '\'' + 
 			",on_sale = '" + onSale + '\'' + 
 			"}";
 		}

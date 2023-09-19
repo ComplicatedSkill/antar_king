@@ -61,8 +61,6 @@ dependencies {
     //html text view
     implementation 'org.sufficientlysecure:html-textview:4.0'
 
-    //Adding IOSProgressHUD to your project
-//    implementation 'com.github.Prashant-Chandel:IOS-progressbar-for--android:-SNAPSHOT'
 
 
 }

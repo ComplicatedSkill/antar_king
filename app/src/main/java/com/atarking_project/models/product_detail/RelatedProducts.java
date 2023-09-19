@@ -41,13 +41,13 @@ public class RelatedProducts {
 	private String name;
 
 	@SerializedName("attributes")
-	private List<AttributesItem> attributes;
+	private List<ProductAttributes> attributes;
 
 	@SerializedName("id")
 	private int id;
 
 	@SerializedName("categories")
-	private List<CategoriesItem> categories;
+	private List<ProductCategories> categories;
 
 	@SerializedName("sku")
 	private String sku;
@@ -140,11 +140,11 @@ public class RelatedProducts {
 		return name;
 	}
 
-	public void setAttributes(List<AttributesItem> attributes){
+	public void setAttributes(List<ProductAttributes> attributes){
 		this.attributes = attributes;
 	}
 
-	public List<AttributesItem> getAttributes(){
+	public List<ProductAttributes> getAttributes(){
 		return attributes;
 	}
 
@@ -156,11 +156,11 @@ public class RelatedProducts {
 		return id;
 	}
 
-	public void setCategories(List<CategoriesItem> categories){
+	public void setCategories(List<ProductCategories> categories){
 		this.categories = categories;
 	}
 
-	public List<CategoriesItem> getCategories(){
+	public List<ProductCategories> getCategories(){
 		return categories;
 	}
 

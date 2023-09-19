@@ -42,36 +42,38 @@
                     android:layout_weight="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_gravity="center"
                     android:orientation="horizontal">
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end">
+                        android:layout_gravity="center">
                         <ImageView
-
                             android:layout_width="25dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/search"/>
+                            android:padding="2dp"
+                            android:src="@drawable/search_24"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="match_parent"
+                        android:layout_gravity="center"
                         android:layout_height="wrap_content">
                         <ImageView
                             android:layout_width="23dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/heart"/>
+                            android:src="@drawable/heart_outline"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="match_parent"
+                        android:layout_gravity="center"
                         android:layout_height="wrap_content">
                         <ImageView
                             android:layout_width="25dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/cart"/>
+                            android:src="@drawable/shopping_bag_24"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -119,10 +121,13 @@
                                         android:id="@+id/productImageSlide"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:padding="20dp"
                                         app:iss_period="1000"
                                         app:iss_delay="1000"
                                         app:iss_placeholder="@drawable/loading_logo"
-                                        app:iss_text_align="CENTER"/>
+                                        app:iss_text_align="CENTER"
+                                        app:iss_selected_dot="@drawable/default_selected_dot"
+                                        app:iss_unselected_dot="@drawable/default_unselected_dot" />
                                 </LinearLayout>
                                 <LinearLayout
                                     android:layout_weight="2"
@@ -225,6 +230,15 @@
                                 android:fontFamily="@font/montserrat_regular"
                                 android:textColor="#fff" />
                             <TextView
+                                android:id="@+id/testing"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:textColor="#fff"
+                                android:textSize="18dp"
+                                android:text="Related products"/>
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
@@ -236,6 +250,7 @@
                                 android:id="@+id/recyclerViewRelatedProduct"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="50dp"
                                 android:layout_marginTop="20dp"/>
                         </LinearLayout>
                         <RelativeLayout
@@ -244,11 +259,11 @@
                             android:layout_marginEnd="30dp"
                             android:layout_height="wrap_content">
                             <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:padding="10dp"
                                 android:background="@drawable/floating_action_button_bg"
-                                android:src="@drawable/heart_24"/>
+                                android:src="@drawable/heart_outline"/>
                         </RelativeLayout>
                     </RelativeLayout>
                 </LinearLayout>
@@ -265,6 +280,7 @@
             android:background="#111518"
             android:layout_alignParentBottom="true">
             <Button
+                android:id="@+id/buttonOpenBottomSheet"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:backgroundTint="#fff"
